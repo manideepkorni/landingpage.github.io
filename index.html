@@ -16,16 +16,16 @@
         <form autocomplete="off",name="leadform" onsubmit="createObject();return false">
             <div>
                 <label >Name</label>
-                <input type="text" id="Name" required>
+                <input type="text" id="Name-field" required>
             </div>
             <div>
                 <label >Email</label>
-                <input type="text" id="Email" >
+                <input type="text" id="Email-field" >
             </div>
             
             <div>
                 <label >FullName</label>
-                <input type="text" id="FullName" >
+                <input type="text" id="FullName-field" >
             </div>
             
             
@@ -49,18 +49,18 @@
 */
 var config = {
     fields: {
-        "LeadName": "#Name", // Name of a visitor, submitting the page
-        "Email": "#Email", // Visitor's email
+        "LeadName": "#Name-field", // Name of a visitor, submitting the page
+        "Email": "#Email-field", // Visitor's email
       
     },
     contactFields:{
-        "FullName":"#FullName"
+        "FullName":"#FullName-field"
     },
    
    
     landingId: "cf0d77cc-7087-4347-ae87-3467a50a2283",
     serviceUrl: "http://localhost:99/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
-  redirectUrl: "https://www.google.com/"
+  redirectUrl: "https://manideepkorni.github.io/landingpage.github.io/"
 };
 /**
 * The function below creates a object from the submitted data.
