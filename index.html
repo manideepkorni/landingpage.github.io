@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing page </title>
+</head>
+<body>
+
+    <div id="main div">
+
+        <h1>
+            Enter details of lead
+        </h1>
+        <form autocomplete="off",name="leadform" onsubmit="createObject();return false">
+            <div>
+                <label >Name</label>
+                <input type="text" id="Name" required>
+            </div>
+            <div>
+                <label >Email</label>
+                <input type="text" id="Email" >
+            </div>
+            
+            <div>
+                <label >FullName</label>
+                <input type="text" id="FullName" >
+            </div>
+            
+            
+            <div>
+                <input type="submit" id="submit-form" value="SUBMIT">
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
+<script>
+
+/**
+* Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
+* You can use #id or any other CSS selector that will define the input field explicitly.
+* Example: "Email": "#MyEmailField".
+* If you don't have a field from the list below placed on your landing, leave the placeholder or remove the line.
+*/
+var config = {
+    fields: {
+        "LeadName": "#Name", // Name of a visitor, submitting the page
+        "Email": "#Email", // Visitor's email
+      
+    },
+    contactFields:{
+        "FullName":"#FullName"
+    },
+   
+   
+    landingId: "cf0d77cc-7087-4347-ae87-3467a50a2283",
+    serviceUrl: "http://localhost:99/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+  redirectUrl: "https://www.google.com/"
+};
+/**
+* The function below creates a object from the submitted data.
+* Bind this function call to the "onSubmit" event of the form or any other elements events.
+* Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+*/
+function createObject() {
+    console.log("inside create object");
+    landing.createObjectFromLanding(config);
+    console.log(landing);
+}
+/**
+* The function below inits landing page using URL parameters.
+*/
+function initLanding() {
+    console.log("init function landing");
+    landing.initLanding(config);
+}
+jQuery(document).ready(initLanding);
+</script>
+
+</html>
