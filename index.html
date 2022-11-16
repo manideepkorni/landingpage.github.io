@@ -27,6 +27,10 @@
                 <label >FullName</label>
                 <input type="text" id="FullName-field" >
             </div>
+            <div>
+                <label >status</label>
+                <input type="hidden" id="status-field">
+            </div>
             
             
             <div>
@@ -51,12 +55,14 @@ var config = {
     fields: {
         "LeadName": "#Name-field", // Name of a visitor, submitting the page
         "Email": "#Email-field", // Visitor's email
+        "Status":"#submit-field"//status
       
     },
     contactFields:{
         "FullName":"#FullName-field"
     },
    
+    customFields: {},
     landingId: "dd45263d-99aa-42a4-8fd8-a4f33b5b9ae8",
     serviceUrl: "https://126532-crm-bundle.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
     redirectUrl: ""
@@ -67,15 +73,12 @@ var config = {
 * Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
 */
 function createObject() {
-    console.log("inside create object");
     landing.createObjectFromLanding(config);
-    console.log(landing);
 }
 /**
 * The function below inits landing page using URL parameters.
 */
 function initLanding() {
-    console.log("init function landing");
     landing.initLanding(config);
 }
 jQuery(document).ready(initLanding);
